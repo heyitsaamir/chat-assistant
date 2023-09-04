@@ -10,6 +10,7 @@ import {
   MessagingExtensionAction,
 } from "botbuilder";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
+import { addMessageContext, ping } from "./backend";
 
 export interface DataInterface {
   likeCount: number;
@@ -72,6 +73,9 @@ export class TeamsBot extends TeamsActivityHandler {
     _action: MessagingExtensionAction
   ): Promise<MessagingExtensionActionResponse> {
     console.log("handle fetch task");
+    const message = context.activity.value?.messagePayload?.body.content;
+    const messageUrl = context.activity.value?.messagePayload?.linkToMessage;
+    await addMessageContext(messageUrl, message);
     const adaptiveCard = CardFactory.adaptiveCard(
       AdaptiveCards.declare<DataInterface>({
         type: "AdaptiveCard",
@@ -79,13 +83,14 @@ export class TeamsBot extends TeamsActivityHandler {
         body: [
           {
             type: "TextBlock",
-            text: `You have sent ${JSON.stringify(context.activity)}`,
+            text: `Added message context for ${messageUrl} with message ${message}!`,
             wrap: true,
           },
         ],
         $schema: "http://adaptivecards.io/schemas/adaptive-card.json",
       }).render()
     );
+    
     return {
       task: {
         type: "continue",
