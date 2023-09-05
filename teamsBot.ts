@@ -8,13 +8,10 @@ import {
   MessagingExtensionResponse,
   MessagingExtensionActionResponse,
   MessagingExtensionAction,
+  BotHandler,
 } from "botbuilder";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
 import { addMessageContext, ping } from "./backend";
-
-export interface DataInterface {
-  likeCount: number;
-}
 
 export class TeamsBot extends TeamsActivityHandler {
   constructor() {
@@ -28,7 +25,7 @@ export class TeamsBot extends TeamsActivityHandler {
     query: MessagingExtensionQuery
   ): Promise<MessagingExtensionActionResponse> {
     console.log("handle!");
-    const card = AdaptiveCards.declare<DataInterface>({
+    const card = AdaptiveCards.declare({
       type: "AdaptiveCard",
       body: [
         {
@@ -77,7 +74,7 @@ export class TeamsBot extends TeamsActivityHandler {
     const messageUrl = context.activity.value?.messagePayload?.linkToMessage;
     await addMessageContext(messageUrl, message);
     const adaptiveCard = CardFactory.adaptiveCard(
-      AdaptiveCards.declare<DataInterface>({
+      AdaptiveCards.declare({
         type: "AdaptiveCard",
         version: "1.6",
         body: [
@@ -104,4 +101,6 @@ export class TeamsBot extends TeamsActivityHandler {
       },
     };
   }
+
+  
 }

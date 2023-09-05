@@ -23,7 +23,30 @@
         "full": "full description of chat-assistant"
     },
     "accentColor": "#FFFFFF",
-    "bots": [],
+    "bots": [
+        {
+            "botId": "${{BOT_ID}}",
+            "scopes": [
+                "personal",
+                "groupchat"
+            ],
+            "supportsFiles": false,
+            "isNotificationOnly": false,
+            "commandLists": [
+                {
+                    "scopes": [
+                        "personal"
+                    ],
+                    "commands": [
+                        {
+                            "title": "query",
+                            "description": "Query for old context"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
     "composeExtensions": [
         {
             "botId": "${{BOT_ID}}",

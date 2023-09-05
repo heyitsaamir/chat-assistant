@@ -1,28 +1,27 @@
 import axios from "axios";
 import config from "./config";
 
-interface Wiki {
-  path: string;
-  order: number;
-  gitItemPath: string;
-  subPages: any[];
-  url: string;
-  remoteUrl: string;
-  id: number;
-  content: string;
-}
-
 export const ping = async () => {
-  const response = await axios.get<Wiki>('/api/beginCollect?ping=true', {
+  const response = await axios.get('/api/beginCollect?ping=true', {
     baseURL: process.env["BACKEND_ENDPOINT"]
   });
   return response.data;
 };
 
 export const addMessageContext = async (messageUrl: string, message: string) => {
-  const response = await axios.post<Wiki>('/api/beginCollect', {
+  const response = await axios.post('/api/beginCollect', {
     rawText: message,
     rawTextUrl: messageUrl
+  },
+   {
+    baseURL: process.env["BACKEND_ENDPOINT"]
+  });
+  return response.data;
+};
+
+export const queryForMessage = async (query: string) => {
+  const response = await axios.post('/api/beginCollect', {
+    query
   },
    {
     baseURL: process.env["BACKEND_ENDPOINT"]
