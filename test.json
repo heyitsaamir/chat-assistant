@@ -1,0 +1,144 @@
+{
+   "_respondedRef":{
+      "responded":false
+   },
+   "_turnState":{
+      "turn":{
+         "locale":"en-US"
+      }
+   },
+   "_onSendActivities":[
+      
+   ],
+   "_onUpdateActivity":[
+      
+   ],
+   "_onDeleteActivity":[
+      
+   ],
+   "_turn":"turn",
+   "_locale":"locale",
+   "bufferedReplyActivities":[
+      
+   ],
+   "_adapter":{
+      "middleware":{
+         "middleware":[
+            null
+         ]
+      },
+      "botFrameworkAuthentication":{
+         "inner":{
+            "validateAuthority":true,
+            "toChannelFromBotLoginUrl":"https://login.microsoftonline.com/botframework.com",
+            "toChannelFromBotOAuthScope":"https://api.botframework.com",
+            "toBotFromChannelTokenIssuer":"https://api.botframework.com",
+            "oAuthUrl":"https://api.botframework.com",
+            "toBotFromChannelOpenIdMetadataUrl":"https://login.botframework.com/v1/.well-known/openidconfiguration",
+            "toBotFromEmulatorOpenIdMetadataUrl":"https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration",
+            "callerId":"urn:botframework:azure",
+            "credentialsFactory":{
+               "name":"ConfigurationServiceClientCredentialFactory",
+               "appId":"fa032dd7-3fb9-474b-9cc4-3f8c4b2b4978"
+            },
+            "authConfiguration":{
+               "requiredEndorsements":[
+                  
+               ]
+            },
+            "connectorClientOptions":{
+               
+            }
+         }
+      }
+   },
+   "_activity":{
+      "name":"composeExtension/fetchTask",
+      "type":"invoke",
+      "timestamp":"2023-09-06T04:06:30.307Z",
+      "localTimestamp":"2023-09-06T04:06:30.307Z",
+      "id":"f:5b335488-0d61-7d41-9f72-3f7bda32ee0d",
+      "channelId":"msteams",
+      "serviceUrl":"https://smba.trafficmanager.net/amer/",
+      "from":{
+         "id":"29:1TC8mZl8VSuxlFq4ec5y3h99Cg2cLLRS6BI6Q8A_XeX_lXzqVs_MiG85AYgKDszPfr-X0cDXLVlm7UBzcx_MzFg",
+         "name":"Aamir Jawaid",
+         "aadObjectId":"1edceb7c-f52f-46a5-8ba5-858240d01c20"
+      },
+      "conversation":{
+         "isGroup":true,
+         "conversationType":"channel",
+         "tenantId":"72f988bf-86f1-41af-91ab-2d7cd011db47",
+         "id":"19:5d92047488b947d8b05ae03c7dce3c51@thread.tacv2;messageid=1692730845707",
+         "name":"Aamir Debug Salad"
+      },
+      "recipient":{
+         "id":"28:fa032dd7-3fb9-474b-9cc4-3f8c4b2b4978",
+         "name":"chat-assistant"
+      },
+      "entities":[
+         {
+            "locale":"en-US",
+            "country":"US",
+            "timezone":"America/Los_Angeles",
+            "type":"clientInfo"
+         }
+      ],
+      "channelData":{
+         "channel":{
+            "id":"19:5d92047488b947d8b05ae03c7dce3c51@thread.tacv2"
+         },
+         "team":{
+            "id":"19:W5iEM-hFpFlM9FnertAKA1PcXqAY7_tk3gTUc9XzkWU1@thread.tacv2"
+         },
+         "tenant":{
+            "id":"72f988bf-86f1-41af-91ab-2d7cd011db47"
+         },
+         "source":{
+            "name":"compose"
+         }
+      },
+      "value":{
+         "commandId":"saveContext",
+         "commandContext":"message",
+         "context":{
+            "theme":"default"
+         },
+         "messagePayload":{
+            "id":"1692730845707",
+            "replyToId":"1692730845707",
+            "createdDateTime":"2023-08-22T19:00:45.707Z",
+            "lastModifiedDateTime":"2023-08-24T16:18:10.693Z",
+            "deleted":false,
+            "importance":"normal",
+            "locale":"en-us",
+            "from":{
+               "user":{
+                  "userIdentityType":"aadUser",
+                  "id":"1edceb7c-f52f-46a5-8ba5-858240d01c20",
+                  "displayName":"Aamir Jawaid"
+               }
+            },
+            "body":{
+               "contentType":"html",
+               "content":"<p>Helpful links:</p>\r\n<p>How to make changes to flags: <a href=""https":" rel=""noreferrer noopener"" title=""https":" target=""_blank"">https://domoreexp.visualstudio.com/Teamspace/_git/teams-modular-packages?path=/docs/architecture/settings/experience-config-files.md&_a=preview</a></p>\r\n<p> </p>\r\n<p>Ring Definitions - <a href=""https"://domoreexp.visualstudio.com/Teamspace/_wiki/wikis/Teamspace.wiki/2220/Teams-Ring-Audience" rel=""noreferrer noopener"" title=""https"://domoreexp.visualstudio.com/teamspace/_wiki/wikis/teamspace.wiki/2220/teams-ring-audience" target=""_blank"">https://domoreexp.visualstudio.com/Teamspace/_wiki/wikis/Teamspace.wiki/2220/Teams-Ring-Audience</a></p>\r\n<p> </p>\r\n<ul>\r\n<li>The PR in which a flag is introduced should always be set to false</li><li>@work refers to <code>prod</code> and <code>life</code> both</li><li>Use the generated rollout comment to get the build number</li><li>Ring name with a <code>!</code> means it focuses on that ring and that ring only. Without the bang, it means that ring and all rings under it.</li></ul>"
+            },
+            "attachments":[
+               
+            ],
+            "mentions":[
+               
+            ],
+            "reactions":[
+               
+            ],
+            "linkToMessage":"https://teams.microsoft.com/l/message/19:5d92047488b947d8b05ae03c7dce3c51@thread.tacv2/1692730845707"
+         }
+      },
+      "locale":"en-US",
+      "localTimezone":"America/Los_Angeles",
+      "rawTimestamp":"2023-09-06T04:06:30.307Z",
+      "rawLocalTimestamp":"2023-09-05T21:06:30.307-07:00",
+      "callerId":"urn:botframework:azure"
+   }
+}

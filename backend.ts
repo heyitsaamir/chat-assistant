@@ -8,10 +8,13 @@ export const ping = async () => {
   return response.data;
 };
 
-export const addMessageContext = async (messageUrl: string, message: string) => {
+export const addMessageContext = async (messageUrl: string, message: string, sender: string, additionalContext?: string) => {
   const response = await axios.post('/api/beginCollect', {
     rawText: message,
-    rawTextUrl: messageUrl
+    rawTextUrl: messageUrl,
+    sender,
+    additionalContext,
+    messageType: 'html'
   },
    {
     baseURL: process.env["BACKEND_ENDPOINT"]
