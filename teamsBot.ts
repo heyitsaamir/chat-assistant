@@ -1,5 +1,3 @@
-import { default as axios } from "axios";
-import * as querystring from "querystring";
 import {
   TeamsActivityHandler,
   CardFactory,
@@ -35,7 +33,7 @@ export class TeamsBot extends TeamsActivityHandler {
     return {
       task: {
         type: "message",
-        value: "Thanks!",
+        value: "Saved!",
       },
     };
   }

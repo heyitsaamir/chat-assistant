@@ -15,7 +15,8 @@ import {
 // This bot's main dialog.
 import { TeamsBot } from "./teamsBot";
 import config from "./config";
-import { QueryBookmarkCommandHandler } from "./queryBookmarkCommandHandler";
+import { QueryBookmarkCommandHandler } from "./commandHandlers/queryBookmarkCommandHandler";
+import { AddWikiCommandHandler } from "./commandHandlers/addWikiCommandHandler";
 
 // Create adapter.
 // See https://aka.ms/about-bot-adapter to learn more about adapters.
@@ -48,8 +49,12 @@ const onTurnErrorHandler = async (context: TurnContext, error: Error) => {
   );
 
   // Send a message to the user
-  await context.sendActivity(`The bot encountered unhandled error:\n ${error.message}`);
-  await context.sendActivity("To continue to run this bot, please fix the bot source code.");
+  await context.sendActivity(
+    `The bot encountered unhandled error:\n ${error.message}`
+  );
+  await context.sendActivity(
+    "To continue to run this bot, please fix the bot source code."
+  );
 };
 
 // Set the onTurnError for the singleton CloudAdapter.
@@ -61,9 +66,9 @@ const bot = new TeamsBot();
 export const commandApp = new ConversationBot({
   command: {
     enabled: true,
-    commands: [new QueryBookmarkCommandHandler()],
+    commands: [new QueryBookmarkCommandHandler(), new AddWikiCommandHandler()],
   },
-  adapter
+  adapter,
 });
 
 // Create HTTP server.

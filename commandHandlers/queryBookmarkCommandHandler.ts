@@ -5,7 +5,7 @@ import {
   TriggerPatterns,
 } from "@microsoft/teamsfx";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
-import { queryForMessage } from "./backend";
+import { queryForMessage } from "../backend";
 
 const json = {
   type: "AdaptiveCard",
@@ -46,7 +46,6 @@ export class QueryBookmarkCommandHandler implements TeamsFxBotCommandHandler {
   ): Promise<string | Partial<Activity> | void> {
     console.log(`App received message: ${message.text}`);
     const queryResult = await queryForMessage(message.text);
-    // Render your adaptive card for reply message
 
     const cardDatas = queryResult.map((result) => ({
       title: "Query Result",
